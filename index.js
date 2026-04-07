@@ -6,6 +6,10 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/products', (req, res) => res.json([new Product(3, 'cherry'), new Product(4, 'kiwi')]))
 
+app.get('/issue', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html')); 
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 class Product{
